@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mock JSON Table</title>
+</head>
+<body>
+  <h1>User List</h1>
+  <table border="1" id="userTable">
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Age</th><th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be added here -->
+    </tbody>
+  </table>
+
+  <script>
+    const users = [
+      { id: 1, name: "Anthony", age: 30, email: "anthony@example.com" },
+      { id: 2, name: "Christian", age: 35, email: "christian@example.com" },
+      { id: 3, name: "Sneha", age: 37, email: "sneha@example.com" }
+    ];
+
+    function renderTable(data) {
+      const tbody = document.querySelector("#userTable tbody");
+      tbody.innerHTML = "";  // Clear existing rows
+      data.forEach(user => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${user.id}</td>
+          <td>${user.name}</td>
+          <td>${user.age}</td>
+          <td>${user.email}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    renderTable(users);
+  </script>
+</body>
+</html>

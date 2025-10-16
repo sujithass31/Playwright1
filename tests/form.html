@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Page</title>
+</head>
+<body>
+  <h1>Fill Out the Form</h1>
+  <form id="contact-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" />
+    <br />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" />
+    <br />
+    <button type="submit">Submit</button>
+  </form>
+  <div id="form-message" style="display:none;">Form submitted!</div>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("form-message").style.display = "block";
+    });
+  </script>
+</body>
+</html>
