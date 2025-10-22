@@ -8,7 +8,9 @@ test.describe('User Table Tests', () => {
 
   test('Table has 3 rows', async ({ page }) => {
     const rows = await page.locator('#userTable tbody tr');
-    await expect(rows).toHaveCount(3);
+    //await expect(rows).toHaveCount(3);
+        await expect(rows).toHaveCount(5);
+
   });
 
   test('First row data is correct', async ({ page }) => {

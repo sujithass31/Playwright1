@@ -1,13 +1,20 @@
 const { test, expect } = require('@playwright/test');
+const { chromium } = require('playwright');  // Or use firefox/webkit
 
+
+
+ 
+  
 
   // Before each test, open the login page
   test.beforeEach(async ({ page }) => {
+    
     await page.goto('file:///C:/Playwright/tests/login.html');
+      
   });
 
   test('should display login page elements', async ({ page }) => {
-    await expect(page.locator('h2')).toHaveText('Login');
+    await expect(page.locator('h2')).toHaveText('Login1');
     await expect(page.locator('#username')).toBeVisible();
     await expect(page.locator('#password')).toBeVisible();
     await expect(page.locator('#loginButton')).toBeVisible();
@@ -47,4 +54,8 @@ const { test, expect } = require('@playwright/test');
     await expect(page.locator('#message')).toHaveText('Invalid username or password.');
   });
 
+   // ✅ Stop tracing and export it to a .zip file
+  
+
+  
 

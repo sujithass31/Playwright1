@@ -6,7 +6,9 @@ const { describe } = require('node:test');
     
 
   test('Home Page - Navigation works', async ({ page }) => {
-    await page.goto('file:///C:/Playwright/tests/index.html');
+    //await page.goto('file:///C:/Playwright/tests/index.html');
+        await page.goto('file:///C:/Playwright/tests/example.html');
+
     await page.click('#go-to-form');
     await expect(page).toHaveURL(/.*form.html/);
     /*await page.click('#userTable');
